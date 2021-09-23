@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3 text-right">
+      Alert Types:
+    </div>
+    <div class="col text-right">
+      <select class="form-control form-control-sm">
+        <option *ngFor="let item of alertTypes">{{item.name}}</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-3 text-right">
+      Area Code:
+    </div>
+    <div class="col text-right">
+      <select class="form-control form-control-sm">
+        <option *ngFor="let item of codeData">{{item}}</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<mat-slider min="1" max="100" step="1" value="50"></mat-slider>
+
+
+<mat-expansion-panel hideToggle *ngFor="let item of codeData">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+    {{item}}
+    </mat-panel-title>
+    <mat-panel-description>
+      This is a summary of the content
+    </mat-panel-description><br>
+  </mat-expansion-panel-header>
+  <p>This is the primary content of the panel.</p><hr> <button routerLink="/area-details" class="success">Click Me</button>
+</mat-expansion-panel>
+
+<section>
+  <div class="example-label">Raised</div>
+  <div class="example-button-row">
+    <button mat-raised-button>Basic</button>
+    <button mat-raised-button color="primary">Primary</button>
+    <button mat-raised-button color="accent">Accent</button>
+    <button mat-raised-button color="warn">Warn</button>
+    <button mat-raised-button disabled>Disabled</button>
+    <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
+  </div>
+</section>
+<router-outlet></router-outlet>
